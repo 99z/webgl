@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Hello Point</title>
+	<title>Hello Point 2</title>
 </head>
 
 <body onload="main()">
@@ -13,21 +13,18 @@
 	<script src="../lib/webgl-utils.js"></script>
 	<script src="../lib/webgl-debug.js"></script>
 	<script src="../lib/cuon-utils.js"></script>
-	<script src="HelloPoint1.js"></script>
+	<script src="HelloPoint2.js"></script>
 
 	<script id="2d-vertex-shader" type="notjs">
-		// Vertex shader is a program used to describe traits
-		// of a vertex, a point in 2D/3D space
+		attribute vec4 a_Position;
+		attribute float a_PointSize;
 		void main() {
-			gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-			gl_PointSize = 10.0;
+			gl_Position = a_Position;
+			gl_PointSize = a_PointSize;
 		}
 	</script>
 
 	<script id="2d-fragment-shader" type="notjs">
-		// Fragment shader is a program that deals with
-		// per-fragment processing such as lightning
-		// As a WebGL term, can think of as a "pixel"
 		void main() {
 			gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 		}
